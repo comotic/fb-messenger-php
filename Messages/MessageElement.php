@@ -94,7 +94,9 @@ class MessageElement
             $result['buttons'] = [];
 
             foreach ($this->buttons as $btn) {
-                $result['buttons'][] = $btn->getData();
+                if(!is_null($btn)) {
+                    $result['buttons'][] = $btn->getData();
+                }
             }
         }
 
